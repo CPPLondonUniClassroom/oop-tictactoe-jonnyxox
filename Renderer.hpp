@@ -5,27 +5,11 @@
 
 class Renderer : public I_renderer {
 public:
-    explicit Renderer(Board &_board) :
-            board{_board} {}
+    explicit Renderer(Board &);
 
-    Renderer() {
-        Board board;
-    }
+    Renderer();
 
-    void render_board() const {
-        int index{1};
-        std::vector<char> bp_state = board.Current_state();
-        std::cout << "\n";
-        for_each(bp_state.begin(), bp_state.end(), [&index](char const &bp_state) {
-            if ((index + 1) % 3 == 0) std::cout << " | " << "  " << bp_state << "  " << " | ";
-            else
-                std::cout << "  " << bp_state << "  ";
-            if (index % 3 == 0 && index < 7) std::cout << "\n------|-------|-------\n";
-            if (index % 3 == 0 && index > 7) std::cout << "\n";
-            ++index;
-        });
-        std::cout << "\n";
-    }
-
+    void render_board() const;
+private:
     Board board;
 };

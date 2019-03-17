@@ -1,4 +1,7 @@
-#include "catch.hpp"
+#include <sstream>
+#include <iostream>
+
+#include "misc/catch.hpp"
 
 #include "Interface/I_player.hpp"
 #include "Interface/I_renderer.hpp"
@@ -151,8 +154,8 @@ SCENARIO("construct players") {
 
         }
         c_1.Play_game();
+
+
     }
-
-
 };
 
